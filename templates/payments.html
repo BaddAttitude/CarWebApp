@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Payments - Car Leasing App{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Payment History</h2>
+
+<div class="card shadow">
+    <div class="card-header bg-secondary text-white">
+        <h5 class="mb-0">Lease Payments</h5>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Car</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for payment in payments %}
+                    <tr>
+                        <td>#{{ payment.id }}</td>
+                        <td>{{ payment.car }}</td>
+                        <td><strong>${{ "%.2f"|format(payment.amount) }}</strong></td>
+                        <td>{{ payment.date }}</td>
+                        <td>
+                            {% if payment.status == 'Paid' %}
+                            <span class="badge bg-primary">Paid</span>
+                            {% else %}
+                            <span class="badge bg-warning">Pending</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="alert alert-info mt-3">
+            <strong>Note:</strong> This is sample payment data for demonstration purposes.
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a href="{% if session.role == 'student' %}{{ url_for('dashboard_student') }}{% else %}{{ url_for('dashboard_staff') }}{% endif %}" 
+       class="btn btn-outline-secondary">Back to Dashboard</a>
+</div>
+{% endblock %}
+

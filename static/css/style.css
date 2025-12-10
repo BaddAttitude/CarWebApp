@@ -1,0 +1,181 @@
+/* Custom CSS for Car Leasing Application */
+
+/* Red & Black Color Variables */
+:root {
+    --theme-red: #dc3545;
+    --theme-dark-red: #c82333;
+    --theme-black: #000000;
+    --theme-dark-gray: #1a1a1a;
+    --theme-light-gray: #f8f9fa;
+}
+
+/* Body styling */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+main {
+    flex: 1;
+}
+
+/* Bootstrap Primary Colors theme Red */
+.btn-primary,
+.bg-primary {
+    background-color: var(--theme-red) !important;
+    border-color: var(--theme-red) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--theme-dark-red) !important;
+    border-color: var(--theme-dark-red) !important;
+}
+
+.btn-outline-primary {
+    color: var(--theme-red) !important;
+    border-color: var(--theme-red) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--theme-red) !important;
+    border-color: var(--theme-red) !important;
+    color: white !important;
+}
+
+.text-primary {
+    color: var(--theme-red) !important;
+}
+
+/* Bootstrap Success Colors theme Red */
+.btn-success,
+.bg-success {
+    background-color: var(--theme-red) !important;
+    border-color: var(--theme-red) !important;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: var(--theme-dark-red) !important;
+    border-color: var(--theme-dark-red) !important;
+}
+
+/* Override Info Colors */
+.bg-info {
+    background-color: var(--theme-dark-gray) !important;
+}
+
+.alert-info {
+    background-color: #fff3cd;
+    border-color: var(--theme-red);
+    color: var(--theme-black);
+}
+
+/* Navbar - Black background with red accents */
+.navbar-dark.bg-primary {
+    background-color: var(--theme-black) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: var(--theme-red) !important;
+}
+
+.navbar-brand {
+    color: var(--theme-red) !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.2s;
+    border-color: #e0e0e0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+}
+
+.card-header.bg-primary,
+.card-header.bg-success {
+    background-color: var(--theme-black) !important;
+    color: white !important;
+}
+
+/* Custom button styling */
+.btn {
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* Table styling */
+.table {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: var(--theme-black);
+    color: white;
+}
+
+/* Footer styling */
+footer {
+    margin-top: auto;
+    background-color: var(--theme-black) !important;
+    color: white;
+}
+
+footer .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Image placeholder styling */
+img {
+    border-radius: 5px;
+}
+
+/* Alert styling */
+.alert {
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: var(--theme-red);
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: var(--theme-red);
+    color: #721c24;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: var(--theme-red);
+    color: #856404;
+}
+
+/* Badge styling */
+.badge.bg-success {
+    background-color: var(--theme-red) !important;
+}
+
+/* Links */
+a {
+    color: var(--theme-red);
+}
+
+a:hover {
+    color: var(--theme-dark-red);
+}
+

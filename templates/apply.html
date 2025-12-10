@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Apply for Lease - Car Leasing App{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Apply for Lease</h4>
+            </div>
+            <div class="card-body">
+                <!-- Car Information -->
+                <div class="mb-4">
+                    <h5>Car Details</h5>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ car.image or 'https://via.placeholder.com/300x200?text=Car+Image' }}" 
+                                 class="img-fluid rounded" alt="{{ car.model }}">
+                        </div>
+                        <div class="col-md-8">
+                            <h6>{{ car.model }}</h6>
+                            <p class="text-primary"><strong>${{ "%.2f"|format(car.price) }}/month</strong></p>
+                            <p class="text-muted">{{ car.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <!-- Application Form -->
+                <form method="POST" action="{{ url_for('apply', id=car.id) }}">
+                    <div class="alert alert-info">
+                        <strong>Note:</strong> By submitting this application, you agree to the leasing terms and conditions.
+                        Your application will be reviewed by our staff.
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Applicant Email</label>
+                        <input type="email" class="form-control" value="{{ session.email }}" disabled>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit Application</button>
+                        <a href="{{ url_for('car_detail', id=car.id) }}" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

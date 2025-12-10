@@ -1,0 +1,14 @@
+# Ignore virtual environment
+venv/
+
+# Ignore Python cache folders
+__pycache__/
+
+# Ignore database (it changes constantly)
+database/leasing.db
+
+# Ignore SQLite databases
+*.sqlite3
+
+# Ignore Python cache files
+*.pyc

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ car.model }} - Car Leasing App{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{ car.image or 'https://via.placeholder.com/600x400?text=Car+Image' }}" 
+             class="img-fluid rounded shadow" alt="{{ car.model }}">
+    </div>
+    <div class="col-md-6">
+        <h2>{{ car.model }}</h2>
+        <p class="lead text-primary"><strong>${{ "%.2f"|format(car.price) }}/month</strong></p>
+        <hr>
+        <h5>Description</h5>
+        <p class="text-muted">{{ car.description }}</p>
+        <hr>
+        {% if session.role == 'student' %}
+        <a href="{{ url_for('apply', id=car.id) }}" class="btn btn-primary btn-lg">Apply for Lease</a>
+        {% endif %}
+        <a href="{{ url_for('cars') }}" class="btn btn-outline-secondary">Back to Cars</a>
+    </div>
+</div>
+{% endblock %}
+
