@@ -12,8 +12,10 @@
         {% for car in cars %}
         <div class="col-md-4">
             <div class="card h-100 shadow-sm">
-                <img src="{{ car.image or 'https://via.placeholder.com/300x200?text=Car+Image' }}" 
-                     class="card-img-top" alt="{{ car.model }}" style="height: 200px; object-fit: cover;">
+                <img src="{{ url_for('static', filename=car.image) }}"
+                     alt="Car Image"
+                     class="card-img-top"
+                     style="height: 200px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{{ car.model }}</h5>
                     <p class="card-text text-muted">{{ car.description[:100] }}...</p>

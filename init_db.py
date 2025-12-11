@@ -76,12 +76,12 @@ def init_database():
     
     # Seed cars (4-6 sample cars)
     cars_data = [
-        ('Toyota Camry 2024', 299.99, 'Reliable sedan perfect for daily commuting. Features modern safety technology and excellent fuel economy.', 'static/img/camry.jpg'),
-        ('Honda Civic 2024', 279.99, 'Compact and efficient, ideal for city driving. Great value with advanced features.', 'static/img/civic.jpg'),
-        ('Ford Mustang 2024', 499.99, 'Sporty and powerful muscle car. Perfect for those who love performance and style.', 'static/img/mustang.jpg'),
-        ('Tesla Model 3', 599.99, 'Electric vehicle with cutting-edge technology. Zero emissions and autopilot features.', 'static/img/tesla.jpg'),
-        ('BMW 3 Series', 549.99, 'Luxury sedan with premium features. Comfortable ride with excellent handling.', 'static/img/bmw.jpg'),
-        ('Nissan Altima 2024', 269.99, 'Spacious and comfortable mid-size sedan. Great for long trips and family use.', 'static/img/altima.jpg')
+        ('Toyota Camry 2024', 299.99, 'Reliable sedan perfect for daily commuting. Features modern safety technology and excellent fuel economy.', 'img/cars/toyota_camry.jpg'),
+        ('Honda Civic 2024', 279.99, 'Compact and efficient, ideal for city driving. Great value with advanced features.', 'img/cars/honda_civic.jpg'),
+        ('Ford Mustang 2024', 499.99, 'Sporty and powerful muscle car. Perfect for those who love performance and style.', 'img/cars/ford_mustang.jpg'),
+        ('Tesla Model 3', 599.99, 'Electric vehicle with cutting-edge technology. Zero emissions and autopilot features.', 'img/cars/tesla_model_3.jpg'),
+        ('BMW 3 Series', 549.99, 'Luxury sedan with premium features. Comfortable ride with excellent handling.', 'img/cars/bmw_3_series.jpg'),
+        ('Nissan Altima 2024', 269.99, 'Spacious and comfortable mid-size sedan. Great for long trips and family use.', 'img/cars/nissan_altima.jpg')
     ]
     
     cursor.executemany('''
